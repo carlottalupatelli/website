@@ -3,16 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Publications by Carlotta A. Lupatelli">
+  <meta name="description" content="Publications by Carlotta A. Lupatelli, PhD">
   <title>Publications - Carlotta A. Lupatelli, PhD</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <nav>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <nav aria-label="Main navigation">
     <div class="container">
       <a href="index.html" class="logo">Carlotta A. Lupatelli</a>
-      <ul class="links">
+      <ul class="links" role="list">
         <li><a href="index.html">About</a></li>
         <li><a href="publications.html">Publications</a></li>
         <li><a href="projects.html">Projects</a></li>
@@ -22,25 +26,25 @@
     </div>
   </nav>
 
-  <main>
+  <main id="main-content">
     <div class="container">
-      <h1>Publications</h1>
-      <p class="text-secondary" style="margin-bottom: 40px;">
+      <h1 data-reveal>Publications</h1>
+      <p class="text-secondary" style="margin-bottom: 40px;" data-reveal>
         Research contributions in agricultural biology, biocontrol, and microbial sensing
       </p>
 
-      <div class="publication">
-        <h3 class="publication-title">Membrane proteome analysis identifies key components of sensing in Phytophthora parasitica zoospores</h3>
+      <div class="publication" data-reveal>
+        <h3 class="publication-title">Membrane proteome analysis identifies key components of sensing in <em>Phytophthora parasitica</em> zoospores</h3>
         <p class="publication-info">
           <strong>Lupatelli, C.A.</strong> et al. | <em>Scientific Reports</em> <strong>15</strong>, 23500 (2025)
         </p>
         <p>
           This study presents comprehensive membrane proteome analysis revealing key molecular mechanisms underlying zoospore sensing in <em>Phytophthora parasitica</em>, an oomycete pathogen critical for understanding plant-pathogen interactions in crop protection.
         </p>
-        <a href="https://doi.org/10.1038/s41598-025-08701-z" class="publication-doi" target="_blank">DOI: 10.1038/s41598-025-08701-z</a>
+        <a href="https://doi.org/10.1038/s41598-025-08701-z" class="publication-doi" target="_blank" rel="noopener noreferrer">DOI: 10.1038/s41598-025-08701-z</a>
       </div>
 
-      <div class="publication">
+      <div class="publication" data-reveal>
         <h3 class="publication-title">Automated high-content image-based characterization of microorganism behavioral diversity and distribution</h3>
         <p class="publication-info">
           <strong>Lupatelli, C.A.</strong> et al. | <em>Computational and Structural Biotechnology Journal</em> <strong>21</strong>, 5640–5649 (2023)
@@ -48,21 +52,21 @@
         <p>
           Development of an innovative ML-based image analysis tool for automated monitoring of microbial behavioral diversity. This work demonstrates the application of high-content imaging and machine learning for quantitative characterization of microorganism interactions relevant to crop protection solutions.
         </p>
-        <a href="https://doi.org/10.1016/j.csbj.2023.10.055" class="publication-doi" target="_blank">DOI: 10.1016/j.csbj.2023.10.055</a>
+        <a href="https://doi.org/10.1016/j.csbj.2023.10.055" class="publication-doi" target="_blank" rel="noopener noreferrer">DOI: 10.1016/j.csbj.2023.10.055</a>
       </div>
 
-      <div class="publication">
-        <h3 class="publication-title">Integrative Proteomic and Biophysical Approaches to Elucidate Phytophthora Zoospore Sensing and Motility During Early Plant Interactions</h3>
+      <div class="publication" data-reveal>
+        <h3 class="publication-title">Integrative Proteomic and Biophysical Approaches to Elucidate <em>Phytophthora</em> Zoospore Sensing and Motility During Early Plant Interactions</h3>
         <p class="publication-info">
           <strong>Lupatelli, C.A.</strong> | Doctoral Thesis, University Côte d'Azur (2024)
         </p>
         <p>
           PhD dissertation combining proteomic and biophysical approaches to understand the molecular basis of sensing and motility in <em>Phytophthora</em> zoospores during early plant-pathogen interactions. This research integrates laboratory and computational techniques to elucidate key mechanisms in disease development.
         </p>
-        <a href="https://theses.fr/2024COAZ6037" class="publication-doi" target="_blank">View on theses.fr</a>
+        <a href="https://theses.fr/2024COAZ6037" class="publication-doi" target="_blank" rel="noopener noreferrer">View on theses.fr</a>
       </div>
 
-      <div class="publication">
+      <div class="publication" data-reveal>
         <h3 class="publication-title">Conservation de la biodiversité (Biodiversity Conservation)</h3>
         <p class="publication-info">
           <strong>François, M.</strong>, Jackson, L., Njekete, C., <strong>Lupatelli, C.</strong>, et al. |
@@ -71,7 +75,7 @@
         <p>
           Contributed chapter to the INRAE Agroecology Dictionary on biodiversity conservation strategies. This reference work synthesizes knowledge on sustainable agricultural practices and their role in maintaining ecosystem biodiversity.
         </p>
-        <a href="https://doi.org/10.17180/vpgp-gc54" class="publication-doi" target="_blank">DOI: 10.17180/vpgp-gc54</a>
+        <a href="https://doi.org/10.17180/vpgp-gc54" class="publication-doi" target="_blank" rel="noopener noreferrer">DOI: 10.17180/vpgp-gc54</a>
       </div>
     </div>
   </main>
@@ -79,5 +83,7 @@
   <footer>
     <p>&copy; 2025 Carlotta A. Lupatelli. All rights reserved.</p>
   </footer>
+
+  <script src="js/main.js" defer></script>
 </body>
 </html>

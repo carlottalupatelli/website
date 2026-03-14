@@ -5,14 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Curriculum Vitae - Carlotta A. Lupatelli, PhD">
   <title>Curriculum Vitae - Carlotta A. Lupatelli, PhD</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <nav>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <nav aria-label="Main navigation">
     <div class="container">
       <a href="index.html" class="logo">Carlotta A. Lupatelli</a>
-      <ul class="links">
+      <ul class="links" role="list">
         <li><a href="index.html">About</a></li>
         <li><a href="publications.html">Publications</a></li>
         <li><a href="projects.html">Projects</a></li>
@@ -22,15 +26,15 @@
     </div>
   </nav>
 
-  <main>
+  <main id="main-content">
     <div class="container">
-      <h1>Curriculum Vitae</h1>
+      <h1 data-reveal>Curriculum Vitae</h1>
 
       <!-- Work Experience -->
       <section>
-        <h2>Work Experience</h2>
+        <h2 class="section-heading" data-reveal>Work Experience</h2>
         <div class="timeline">
-          <div class="timeline-item">
+          <div class="timeline-item" data-reveal>
             <div class="date">Aug 2025 – Present</div>
             <div class="title">R&D Product Manager</div>
             <div class="location">Biocontrol Technologies, Spain</div>
@@ -42,7 +46,7 @@
             </ul>
           </div>
 
-          <div class="timeline-item">
+          <div class="timeline-item" data-reveal>
             <div class="date">Oct 2021 – Feb 2025</div>
             <div class="title">Researcher in Agricultural Biology</div>
             <div class="location">Institut National de la Recherche Agronomique / INPHYNI / CNRS, France</div>
@@ -54,7 +58,7 @@
             </ul>
           </div>
 
-          <div class="timeline-item">
+          <div class="timeline-item" data-reveal>
             <div class="date">Dec 2019 – Mar 2020</div>
             <div class="title">R&D Biotech Intern</div>
             <div class="location">BioLine AgroSciences, France</div>
@@ -64,7 +68,7 @@
             </ul>
           </div>
 
-          <div class="timeline-item">
+          <div class="timeline-item" data-reveal>
             <div class="date">Jan 2019 – Jul 2019</div>
             <div class="title">R&D Foodtech Intern</div>
             <div class="location">University of Algarve, Portugal</div>
@@ -78,21 +82,21 @@
 
       <!-- Education -->
       <section>
-        <h2>Education</h2>
+        <h2 class="section-heading" data-reveal>Education</h2>
         <div class="timeline">
-          <div class="timeline-item">
+          <div class="timeline-item" data-reveal>
             <div class="date">Oct 2021 – Dec 2024</div>
             <div class="title">PhD in Molecular and Cellular Interactions</div>
             <div class="location">University Côte d'Azur, Nice, France</div>
           </div>
 
-          <div class="timeline-item">
+          <div class="timeline-item" data-reveal>
             <div class="date">Sep 2019 – Jun 2021</div>
             <div class="title">Master of Science in Plant Protection Solutions & Biocontrol</div>
             <div class="location">University Côte d'Azur, Nice, France</div>
           </div>
 
-          <div class="timeline-item">
+          <div class="timeline-item" data-reveal>
             <div class="date">Oct 2015 – Oct 2018</div>
             <div class="title">Bachelor Degree in Food Technology</div>
             <div class="location">University of Perugia, Perugia, Italy</div>
@@ -102,9 +106,9 @@
 
       <!-- Skills -->
       <section>
-        <h2>Skills</h2>
+        <h2 class="section-heading" data-reveal>Skills</h2>
         <div class="skills-container">
-          <div class="skill-group">
+          <div class="skill-group" data-reveal data-delay="100">
             <h4>Regulatory</h4>
             <div class="skill-chip">EU 1107/2009 Dossiers</div>
             <div class="skill-chip">Regulatory Reporting</div>
@@ -114,7 +118,7 @@
             <div class="skill-chip">Records Keeping</div>
           </div>
 
-          <div class="skill-group">
+          <div class="skill-group" data-reveal data-delay="150">
             <h4>Software & Tools</h4>
             <div class="skill-chip">Python</div>
             <div class="skill-chip">MATLAB</div>
@@ -127,7 +131,7 @@
             <div class="skill-chip">Generative AI</div>
           </div>
 
-          <div class="skill-group">
+          <div class="skill-group" data-reveal data-delay="200">
             <h4>Project Management</h4>
             <div class="skill-chip">EU-funded Projects</div>
             <div class="skill-chip">Task Tracking</div>
@@ -137,7 +141,7 @@
             <div class="skill-chip">Budget Follow-up</div>
           </div>
 
-          <div class="skill-group">
+          <div class="skill-group" data-reveal data-delay="250">
             <h4>Languages</h4>
             <div class="skill-chip">Italian (Native)</div>
             <div class="skill-chip">English (C1)</div>
@@ -146,7 +150,7 @@
             <div class="skill-chip">Catalan (A2)</div>
           </div>
 
-          <div class="skill-group">
+          <div class="skill-group" data-reveal data-delay="300">
             <h4>Key Strengths</h4>
             <div class="skill-chip">Fast Learner</div>
             <div class="skill-chip">Proactive</div>
@@ -157,7 +161,7 @@
             <div class="skill-chip">Communication</div>
           </div>
 
-          <div class="skill-group">
+          <div class="skill-group" data-reveal data-delay="350">
             <h4>Scientific Expertise</h4>
             <div class="skill-chip">Agricultural Biology</div>
             <div class="skill-chip">Data Analysis</div>
@@ -169,9 +173,12 @@
         </div>
       </section>
 
-      <!-- Download CV -->
-      <section style="text-align: center; padding: 40px 0;">
-        <button class="btn" onclick="window.print()">🖨️ Print CV</button>
+      <!-- Print CV -->
+      <section style="text-align: center; padding: 40px 0;" data-reveal>
+        <button class="btn" onclick="window.print()" aria-label="Print this CV">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect width="12" height="8" x="6" y="14"/></svg>
+          Print CV
+        </button>
       </section>
     </div>
   </main>
@@ -179,5 +186,7 @@
   <footer>
     <p>&copy; 2025 Carlotta A. Lupatelli. All rights reserved.</p>
   </footer>
+
+  <script src="js/main.js" defer></script>
 </body>
 </html>
