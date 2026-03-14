@@ -1,6 +1,6 @@
 # Carlotta A. Lupatelli, PhD — Personal Website
 
-**Live:** https://carlottalupatelli.github.io/carlotta-website/
+**Live:** https://carlottalupatelli.github.io/website/
 
 Personal academic and professional website for Carlotta A. Lupatelli, PhD — plant pathologist, proteomics researcher, and science communicator based in Barcelona, Spain.
 
