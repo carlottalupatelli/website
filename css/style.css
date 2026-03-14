@@ -837,7 +837,7 @@ footer {
   font-size: 14px;
   border-top: 1px solid rgba(82, 183, 136, 0.12);
 }
-footer p { margin: 0; font-weight: 400; }
+footer p { margin: 0; font-weight: 400; color: #ffffff; }
 footer a { color: var(--accent); font-weight: 600; }
 footer a:hover { color: var(--accent-light); text-decoration: underline; }
 
@@ -851,13 +851,13 @@ footer a:hover { color: var(--accent-light); text-decoration: underline; }
 }
 
 .footer-socials .social-icon {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.15);
-  color: rgba(255, 255, 255, 0.75);
+  background: transparent;
+  border: none;
+  color: #ffffff;
 }
 
 .footer-socials .social-icon:hover {
-  background: rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.12);
   color: #fff;
 }
 
