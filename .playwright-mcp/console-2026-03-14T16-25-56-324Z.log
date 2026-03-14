@@ -1,5 +1,0 @@
-[      95ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8000/favicon.ico:0
-[ 2423525ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8000/teaching/master-supervision.html:0
-[ 2435590ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8000/teaching/master-supervision.html:0
-[ 2804901ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8000/teaching/welcome-day.html:0
-[ 2823231ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8000/teaching/welcome-day.html:0

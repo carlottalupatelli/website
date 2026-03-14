@@ -1,6 +1,7 @@
 .claude/
 .DS_Store
 .vscode/
+.playwright-mcp/
 CLAUDE.md
 assets/Basis of image analysis_1.pptx
 *.pptx
