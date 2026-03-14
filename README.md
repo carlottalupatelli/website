@@ -1,116 +1,109 @@
-# Carlotta A. Lupatelli, PhD - Personal Website
+# Carlotta A. Lupatelli, PhD — Personal Website
 
-## 🌐 Live Website
-**https://carlottalupatelli.github.io/carlotta-website/**
+**Live:** https://carlottalupatelli.github.io/carlotta-website/
 
-## 📋 Overview
-A minimal, clean, material-design themed personal website for Carlotta A. Lupatelli, showcasing her professional experience, publications, projects, and contact information.
-
-## 🛠️ Technology Stack
-- **Pure HTML/CSS/JavaScript** — no build tools, no frameworks, no npm dependencies
-- **Material Design** aesthetic with:
-  - Google Roboto font
-  - Card-based layout with elevation shadows
-  - Teal/green color palette (#00796b primary, #4caf50 accent)
-  - Responsive design for all devices
-- **GitHub Pages** — automatic deployment via GitHub Actions
-
-## 📁 Project Structure
-```
-carlotta-website/
-├── .github/
-│   └── workflows/
-│       └── deploy.yml              # GitHub Actions workflow
-├── assets/
-│   └── profile.png                 # Profile photo
-├── css/
-│   └── style.css                   # Material Design styles
-├── index.html                      # Home / About
-├── publications.html               # Research publications
-├── projects.html                   # R&D projects
-├── cv.html                         # Curriculum Vitae
-├── contact.html                    # Contact information
-└── README.md                       # This file
-```
-
-## 📄 Pages
-
-### Home (`index.html`)
-- Hero section with profile photo and tagline
-- Professional summary
-- Quick navigation cards to other pages
-
-### Publications (`publications.html`)
-Four key publications:
-1. *Scientific Reports* 15, 23500 (2025) — Membrane proteome analysis
-2. *CSBJ* 21, 5640–5649 (2023) — ML image analysis tool
-3. PhD Thesis, Université Côte d'Azur (2024)
-4. *Dictionnaire d'Agroécologie*, INRAE (2021)
-
-### Projects (`projects.html`)
-- ML Image Analysis Tool for Microbial Monitoring (INRA/CNRS, 2021–2025)
-- Membrane Proteome Analysis of *Phytophthora parasitica* (2021–2024)
-- Plant Protection Product Registration Dossiers (2025–Present)
-- Biocontrol Product Development (BioLine AgroSciences, 2019–2020)
-
-### CV (`cv.html`)
-- Work experience timeline (4 positions)
-- Education (PhD, MSc, Bachelor)
-- Skills organized by category:
-  - Regulatory affairs
-  - Software & tools
-  - Project management
-  - Languages (5 languages)
-  - Scientific expertise
-- Print-friendly CV page
-
-### Contact (`contact.html`)
-- Email and LinkedIn contact information
-- Quick message form with mailto action
-- Location and availability details
-- Professional links
-
-## 🎨 Color Palette
-- **Primary**: `#00796b` (Teal 700)
-- **Primary Dark**: `#004d40` (Teal 900)
-- **Accent**: `#4caf50` (Green 500)
-- **Surface**: `#ffffff` (White)
-- **Background**: `#f5f5f5` (Light Gray)
-- **Text Primary**: `#212121` (Dark Gray)
-- **Text Secondary**: `#757575` (Medium Gray)
-
-## 🚀 Deployment
-
-The website is automatically deployed to GitHub Pages via GitHub Actions when code is pushed to the `main` branch.
-
-**Workflow**: `.github/workflows/deploy.yml`
-- Triggered on push to `main`
-- Uses official GitHub Pages actions
-- Deploys entire repository to GitHub Pages
-
-**Live URL**: https://carlottalupatelli.github.io/carlotta-website/
-
-## ✨ Features
-- ✅ Fully responsive (mobile, tablet, desktop)
-- ✅ Material Design aesthetic
-- ✅ No external dependencies or build tools
-- ✅ Fast loading (optimized assets)
-- ✅ SEO-friendly HTML structure
-- ✅ Accessible navigation
-- ✅ Print-friendly CV page
-- ✅ Smooth scrolling and hover effects
-- ✅ Sticky navigation bar
-- ✅ Professional typography with Roboto font
-
-## 📞 Contact
-- **Email**: carlotta.aurora.lupatelli@gmail.com
-- **LinkedIn**: https://www.linkedin.com/in/carlotta-aurora-lupatelli
-- **Location**: Barcelona, Spain
-
-## 📝 License
-Personal website. All content © 2025 Carlotta A. Lupatelli.
+Personal academic and professional website for Carlotta A. Lupatelli, PhD — plant pathologist, proteomics researcher, and science communicator based in Barcelona, Spain.
 
 ---
-**Built with**: Pure HTML, CSS, and JavaScript
-**Hosted on**: GitHub Pages
-**Last Updated**: March 1, 2025
+
+## Tech stack
+
+Pure HTML, CSS, and JavaScript — no build tools, no frameworks, no package manager. Open any `.html` file directly in a browser to preview locally, or use a simple server:
+
+```bash
+python3 -m http.server 8000
+# http://localhost:8000
+```
+
+Deployment is automatic: pushing to `main` triggers GitHub Actions (`.github/workflows/deploy.yml`), which deploys to GitHub Pages.
+
+---
+
+## Project structure
+
+```
+carlotta-website/
+├── .github/workflows/deploy.yml   # GitHub Actions → GitHub Pages
+├── assets/                        # Images, PDFs, and downloadable files
+├── css/style.css                  # Single shared stylesheet
+├── js/main.js                     # Scroll reveal and nav behaviour
+├── teaching/                      # Course detail pages
+│   ├── image-analysis.html
+│   ├── critical-thinking.html
+│   ├── master-supervision.html
+│   └── welcome-day.html
+├── index.html                     # Home / About
+├── publications.html              # Research publications
+├── projects.html                  # R&D projects
+├── teaching.html                  # Teaching overview
+├── cv.html                        # Curriculum Vitae
+├── blog.html                      # Blog
+├── contact.html                   # Contact
+└── favicon.svg
+```
+
+---
+
+## Pages
+
+**Home** (`index.html`) — Hero section, professional summary, and navigation cards.
+
+**Publications** (`publications.html`) — Peer-reviewed papers and other research outputs, including work in *Scientific Reports* (2025) and *Computational and Structural Biotechnology Journal* (2023).
+
+**Projects** (`projects.html`) — Research and industry projects spanning ML image analysis, membrane proteomics, biocontrol product development, and regulatory affairs.
+
+**Teaching** (`teaching.html`) — Overview of teaching activities, each linking to a dedicated detail page:
+- *Image analysis for biology* — 12-hour MSc course on biological imaging pipelines
+- *Critical thinking and interactive learning* — 4-hour figure analysis session for MScBOOST students
+- *Master's thesis supervision* — 6-month proteomics project supervision
+- *Interactive learning and student integration* — Welcome Day Treasure Hunt co-designed for incoming MSc students
+
+**CV** (`cv.html`) — Work experience, education, and skills. Print-friendly.
+
+**Blog** (`blog.html`) — Science communication and writing.
+
+**Contact** (`contact.html`) — Email, LinkedIn, and contact form.
+
+---
+
+## Design system
+
+All pages share `css/style.css`. CSS custom properties in `:root` control the entire colour palette — always use variables, never hardcoded hex values.
+
+| Token | Value | Use |
+|---|---|---|
+| `--primary` | `#00796b` | Teal 700 — main brand colour |
+| `--accent` | `#4caf50` | Green 500 — highlights and links |
+| `--surface` | `#ffffff` | Card backgrounds |
+| `--background` | `#f5f5f5` | Page background |
+| `--text` | `#212121` | Body text |
+| `--text-secondary` | `#757575` | Subtitles, metadata |
+
+**Fonts:** Archivo (headings) + Space Grotesk (body) — loaded via Google Fonts CDN.
+
+**Layout:** sticky nav → hero/header → content cards (`.publication`) → footer. When adding a new page, copy the nav and footer from any existing page.
+
+---
+
+## Notes on large assets
+
+Files over 100 MB cannot be hosted on GitHub. Large PowerPoint files should be converted to PDF before committing:
+
+```bash
+/Applications/LibreOffice.app/Contents/MacOS/soffice \
+  --headless --convert-to pdf "assets/file.pptx" --outdir assets/
+```
+
+`*.pptx` is listed in `.gitignore`.
+
+---
+
+## Contact
+
+- **Email:** carlotta.aurora.lupatelli@gmail.com
+- **LinkedIn:** https://www.linkedin.com/in/carlotta-aurora-lupatelli
+- **Google Scholar:** https://scholar.google.com/citations?user=jyS56jgAAAAJ
+
+---
+
+All content © 2025 Carlotta A. Lupatelli.
