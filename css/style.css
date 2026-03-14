@@ -313,6 +313,15 @@ main {
   max-width: 52ch;
 }
 
+.hero-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-5);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .hero .location {
   display: inline-flex;
   align-items: center;
@@ -321,7 +330,6 @@ main {
   padding: 7px 14px;
   border-radius: var(--radius-pill);
   font-size: 13px;
-  margin-top: var(--space-5);
   border: 1px solid rgba(82, 183, 136, 0.22);
   font-weight: 500;
   color: var(--accent-light);
@@ -334,6 +342,27 @@ main {
 .hero .location svg {
   flex-shrink: 0;
   opacity: 0.8;
+}
+
+.hero .social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 10px;
+  border-radius: var(--radius-pill);
+  background: rgba(82, 183, 136, 0.13);
+  border: 1px solid rgba(82, 183, 136, 0.22);
+  color: var(--accent-light);
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background var(--duration-fast) ease, color var(--duration-fast) ease, transform var(--duration-fast) ease;
+}
+
+.hero .social-icon:hover {
+  background: rgba(82, 183, 136, 0.28);
+  color: #fff;
+  transform: translateY(-2px);
 }
 
 /* ─── Cards ───────────────────────────────────────── */
@@ -437,7 +466,8 @@ a:hover { color: var(--primary-mid); }
 }
 
 /* ─── About Section ───────────────────────────────── */
-.about-section {
+.about-section,
+.news-section {
   background: var(--surface);
   padding: var(--space-12);
   border-radius: var(--radius-md);
@@ -446,13 +476,15 @@ a:hover { color: var(--primary-mid); }
   border: 1px solid var(--border-subtle);
 }
 
-.about-section h2 {
+.about-section h2,
+.news-section h2 {
   color: var(--primary);
   position: relative;
   padding-bottom: var(--space-4);
   margin-bottom: var(--space-6);
 }
-.about-section h2::after {
+.about-section h2::after,
+.news-section h2::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -465,6 +497,37 @@ a:hover { color: var(--primary-mid); }
 .about-section p {
   font-size: 16px;
   line-height: 1.85;
+  color: var(--text-primary);
+}
+
+/* ─── News Section ───────────────────────────────── */
+
+.news-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.news-item {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-5);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.news-date {
+  font-weight: 600;
+  color: var(--primary);
+  white-space: nowrap;
+  min-width: 80px;
+  font-size: 14px;
+}
+
+.news-text {
   color: var(--text-primary);
 }
 
@@ -767,7 +830,7 @@ a:hover { color: var(--primary-mid); }
 /* ─── Footer ──────────────────────────────────────── */
 footer {
   background: var(--primary-dark);
-  color: rgba(255,255,255,0.65);
+  color: #ffffff;
   text-align: center;
   padding: var(--space-10) var(--space-6);
   margin-top: var(--space-16);
@@ -778,10 +841,37 @@ footer p { margin: 0; font-weight: 400; }
 footer a { color: var(--accent); font-weight: 600; }
 footer a:hover { color: var(--accent-light); text-decoration: underline; }
 
+.footer-socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.footer-socials .social-icon {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.footer-socials .social-icon:hover {
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+}
+
+.contact-social-icon {
+  gap: var(--space-2);
+  padding: 7px 14px !important;
+  font-size: 13px;
+  font-weight: 500;
+}
+
 /* ─── Responsive ──────────────────────────────────── */
 @media (max-width: 900px) {
   .hero { padding: var(--space-10) var(--space-8); }
-  .about-section { padding: var(--space-8); }
+  .about-section, .news-section { padding: var(--space-8); }
 }
 
 /* Contact grid responsive */
@@ -812,7 +902,7 @@ footer a:hover { color: var(--accent-light); text-decoration: underline; }
 
   .skills-container { grid-template-columns: 1fr 1fr; }
 
-  .about-section { padding: var(--space-6); }
+  .about-section, .news-section { padding: var(--space-6); }
   .contact-form  { padding: var(--space-6); }
 
   .timeline { padding-left: var(--space-6); }
