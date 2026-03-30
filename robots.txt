@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://carlottalupatelli.github.io/carlotta-website/sitemap.xml
+Sitemap: https://carlottalupatelli.github.io/website/sitemap.xml
