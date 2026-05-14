@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Career Coaching – Dr. Carlotta A. Lupatelli</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --dark:    #1B4332;
+      --primary: #2d9e6b;
+      --accent:  #52b788;
+      --bright:  #74c69d;
+      --pale:    #d8f3dc;
+      --white:   #ffffff;
+      --text:    #0f1f18;
+      --muted:   #4b6358;
+    }
+
+    html, body {
+      width: 100%; height: 100%;
+      overflow: hidden;
+      font-family: 'Space Grotesk', sans-serif;
+      background: var(--dark);
+    }
+
+    /* ── Slide container ── */
+    .deck {
+      width: 100vw; height: 100vh;
+      position: relative;
+    }
+
+    .slide {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: flex-start;
+      padding: 80px 10%;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.45s ease;
+    }
+    .slide.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    /* ── Cover slide ── */
+    .slide-cover {
+      background: var(--dark);
+      align-items: flex-start;
+    }
+    .slide-cover .eyebrow {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 24px;
+    }
+    .slide-cover h1 {
+      font-family: 'Archivo', sans-serif;
+      font-size: clamp(32px, 5vw, 60px);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      max-width: 700px;
+      margin-bottom: 24px;
+    }
+    .slide-cover .tagline {
+      font-size: clamp(16px, 2vw, 22px);
+      color: var(--bright);
+      font-weight: 500;
+      margin-bottom: 48px;
+    }
+    .slide-cover .author {
+      font-size: 15px;
+      color: rgba(255,255,255,0.55);
+      font-weight: 500;
+      border-top: 1px solid rgba(255,255,255,0.12);
+      padding-top: 24px;
+      width: 100%;
+      max-width: 700px;
+    }
+    .slide-cover .accent-bar {
+      width: 60px; height: 4px;
+      background: var(--accent);
+      border-radius: 2px;
+      margin-bottom: 40px;
+    }
+
+    /* ── Content slides ── */
+    .slide-content {
+      background: var(--white);
+    }
+    .slide-content .slide-number {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .slide-content h2 {
+      font-family: 'Archivo', sans-serif;
+      font-size: clamp(26px, 4vw, 48px);
+      font-weight: 700;
+      color: var(--dark);
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 8px;
+    }
+    .slide-content .subheading {
+      font-size: clamp(14px, 1.5vw, 18px);
+      color: var(--muted);
+      margin-bottom: 40px;
+      font-weight: 500;
+    }
+
+    /* ── Prompt grid (slides 2, 3) ── */
+    .prompt-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      width: 100%;
+      max-width: 900px;
+    }
+    .prompt-card {
+      background: var(--pale);
+      border-radius: 12px;
+      padding: 28px 24px;
+      border-left: 4px solid var(--accent);
+    }
+    .prompt-card .prompt-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+    .prompt-card p {
+      font-size: 15px;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ── Destination cards (slide 4) ── */
+    .destination-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      max-width: 900px;
+    }
+    .destination-card {
+      background: var(--dark);
+      color: var(--white);
+      border-radius: 10px;
+      padding: 18px 24px;
+      font-size: 15px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .destination-card .dot {
+      width: 8px; height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ── Point list (slides 5, 6) ── */
+    .point-list {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      max-width: 820px;
+    }
+    .point-item {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+    .point-number {
+      width: 36px; height: 36px;
+      background: var(--primary);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px; font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .point-item .point-text strong {
+      display: block;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 3px;
+    }
+    .point-item .point-text span {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* ── Takeaway list (slide 7) ── */
+    .takeaway-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-width: 820px;
+      margin-bottom: 40px;
+    }
+    .takeaway-item {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      background: var(--pale);
+      border-radius: 12px;
+      padding: 20px 24px;
+    }
+    .takeaway-icon {
+      width: 40px; height: 40px;
+      background: var(--primary);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      color: white;
+      font-size: 18px;
+    }
+    .takeaway-text {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--dark);
+    }
+    .slide-cta {
+      font-size: 14px;
+      color: var(--muted);
+      border-top: 1px solid #e0ede6;
+      padding-top: 20px;
+      width: 100%;
+      max-width: 820px;
+    }
+    .slide-cta a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* ── Nav counter ── */
+    .nav-counter {
+      position: fixed;
+      bottom: 28px; right: 36px;
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.45);
+      z-index: 100;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Nav arrows hint ── */
+    .nav-hint {
+      position: fixed;
+      bottom: 28px; left: 36px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.3);
+      z-index: 100;
+      letter-spacing: 0.04em;
+    }
+  </style>
+</head>
+<body>
+
+<div class="deck" id="deck">
+
+  <!-- Slide 1: Cover -->
+  <div class="slide slide-cover active" data-index="0">
+    <div class="eyebrow">Career Coaching · Agri &amp; Life Sciences</div>
+    <h1>Turn Your Scientific Background Into Your Next Career Move</h1>
+    <p class="tagline">One session. Real direction.</p>
+    <div class="accent-bar"></div>
+    <div class="author">Dr. Carlotta A. Lupatelli · carlotta.aurora.lupatelli@gmail.com</div>
+  </div>
+
+  <!-- Slide 2: What Are You Good At? -->
+  <div class="slide slide-content" data-index="1">
+    <div class="slide-number">Step 01</div>
+    <h2>What Are You Good At?</h2>
+    <p class="subheading">Mapping your real strengths and transferable skills</p>
+    <div class="prompt-grid">
+      <div class="prompt-card">
+        <div class="prompt-label">Technical Skills</div>
+        <p>What have you built, analysed, or discovered in your research? What tools and methods do you master?</p>
+      </div>
+      <div class="prompt-card">
+        <div class="prompt-label">Transferable Strengths</div>
+        <p>Communication, project management, data interpretation, writing, teaching — what comes naturally?</p>
+      </div>
+      <div class="prompt-card">
+        <div class="prompt-label">Your Reputation</div>
+        <p>What do colleagues always ask you for help with? What do people say you're exceptional at?</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 3: What Do You Dislike? -->
+  <div class="slide slide-content" data-index="2">
+    <div class="slide-number">Step 02</div>
+    <h2>What Do You Want to Leave Behind?</h2>
+    <p class="subheading">Defining what to avoid — as important as knowing what to pursue</p>
+    <div class="prompt-grid">
+      <div class="prompt-card">
+        <div class="prompt-label">Draining Tasks</div>
+        <p>Which daily tasks or environments make you feel exhausted or disengaged? What would you eliminate first?</p>
+      </div>
+      <div class="prompt-card">
+        <div class="prompt-label">Skills You Don't Enjoy</div>
+        <p>Things you're technically capable of — but that you'd rather not do again. Don't confuse competence with passion.</p>
+      </div>
+      <div class="prompt-card">
+        <div class="prompt-label">Work Styles</div>
+        <p>Isolated vs. collaborative? Structured vs. flexible? Fast-paced vs. deep focus? What doesn't fit you?</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 4: Where Can You Go? -->
+  <div class="slide slide-content" data-index="3">
+    <div class="slide-number">Step 03</div>
+    <h2>Where Can Your Profile Take You?</h2>
+    <p class="subheading">Mapping the full opportunity landscape for Agri &amp; Life Sciences professionals</p>
+    <div class="destination-grid">
+      <div class="destination-card"><div class="dot"></div>Academia &amp; Research Institutes</div>
+      <div class="destination-card"><div class="dot"></div>Industry &amp; Biotech Companies</div>
+      <div class="destination-card"><div class="dot"></div>Agritech Startups</div>
+      <div class="destination-card"><div class="dot"></div>Regulatory Bodies &amp; Agencies</div>
+      <div class="destination-card"><div class="dot"></div>International Organisations &amp; NGOs</div>
+    </div>
+  </div>
+
+  <!-- Slide 5: CV Strategy -->
+  <div class="slide slide-content" data-index="4">
+    <div class="slide-number">Step 04</div>
+    <h2>Your CV Strategy</h2>
+    <p class="subheading">Speaking the right language to the right audience</p>
+    <div class="point-list">
+      <div class="point-item">
+        <div class="point-number">1</div>
+        <div class="point-text">
+          <strong>Lead with impact, not tasks</strong>
+          <span>Show what changed because of your work — not just what you did.</span>
+        </div>
+      </div>
+      <div class="point-item">
+        <div class="point-number">2</div>
+        <div class="point-text">
+          <strong>Translate scientific language for industry</strong>
+          <span>Hiring managers outside academia don't speak your lab's vocabulary. Simplify ruthlessly.</span>
+        </div>
+      </div>
+      <div class="point-item">
+        <div class="point-number">3</div>
+        <div class="point-text">
+          <strong>Tailor every application</strong>
+          <span>One CV does not fit all. Each role deserves a version written for that specific context.</span>
+        </div>
+      </div>
+      <div class="point-item">
+        <div class="point-number">4</div>
+        <div class="point-text">
+          <strong>Academic vs. industry CV — know the difference</strong>
+          <span>Length, structure, and emphasis are completely different. Know which one to send.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 6: Networking & Application Strategy -->
+  <div class="slide slide-content" data-index="5">
+    <div class="slide-number">Step 05</div>
+    <h2>Networking &amp; Application Strategy</h2>
+    <p class="subheading">How to find, reach, and land the right role</p>
+    <div class="point-list">
+      <div class="point-item">
+        <div class="point-number">1</div>
+        <div class="point-text">
+          <strong>Build visibility before you need it</strong>
+          <span>The best time to start networking is before you're looking for a job.</span>
+        </div>
+      </div>
+      <div class="point-item">
+        <div class="point-number">2</div>
+        <div class="point-text">
+          <strong>LinkedIn: your scientific story, told simply</strong>
+          <span>Optimise your profile so the right people find you — not just the other way around.</span>
+        </div>
+      </div>
+      <div class="point-item">
+        <div class="point-number">3</div>
+        <div class="point-text">
+          <strong>Warm outreach beats cold applications</strong>
+          <span>A personal message to the right person is worth ten applications through a portal.</span>
+        </div>
+      </div>
+      <div class="point-item">
+        <div class="point-number">4</div>
+        <div class="point-text">
+          <strong>Track, iterate, and follow up</strong>
+          <span>Job searching is a process, not a single event. Keep records and refine as you go.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 7: Next Steps -->
+  <div class="slide slide-content" data-index="6">
+    <div class="slide-number">What You Leave With</div>
+    <h2>Your Action Plan</h2>
+    <p class="subheading">Three concrete outcomes from today's session</p>
+    <div class="takeaway-list">
+      <div class="takeaway-item">
+        <div class="takeaway-icon">✦</div>
+        <div class="takeaway-text">A clear direction that matches who you are and what you want</div>
+      </div>
+      <div class="takeaway-item">
+        <div class="takeaway-icon">✦</div>
+        <div class="takeaway-text">A tailored CV ready to speak to the right audience</div>
+      </div>
+      <div class="takeaway-item">
+        <div class="takeaway-icon">✦</div>
+        <div class="takeaway-text">A concrete 30-day strategy to move forward with confidence</div>
+      </div>
+    </div>
+    <div class="slide-cta">
+      Questions after our session? Reach out anytime →
+      <a href="mailto:carlotta.aurora.lupatelli@gmail.com">carlotta.aurora.lupatelli@gmail.com</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- Navigation counter -->
+<div class="nav-counter" id="counter">1 / 7</div>
+<div class="nav-hint" id="hint">← → to navigate</div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const counter = document.getElementById('counter');
+  const hint = document.getElementById('hint');
+  let current = 0;
+
+  function goTo(index) {
+    slides[current].classList.remove('active');
+    current = Math.max(0, Math.min(index, slides.length - 1));
+    slides[current].classList.add('active');
+    counter.textContent = (current + 1) + ' / ' + slides.length;
+    const isLight = slides[current].classList.contains('slide-content');
+    counter.style.color = isLight ? '#4b6358' : 'rgba(255,255,255,0.45)';
+    hint.style.color = isLight ? '#a0b8ae' : 'rgba(255,255,255,0.25)';
+  }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') goTo(current + 1);
+    if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   goTo(current - 1);
+  });
+</script>
+</body>
+</html>
