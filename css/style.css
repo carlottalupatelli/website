@@ -910,7 +910,8 @@ footer a:hover { color: var(--accent-light); text-decoration: underline; }
 }
 
 /* ─── Services Section ────────────────────────────── */
-.services-section {
+.services-section,
+.services-teaser {
   margin-top: var(--space-16);
 }
 
