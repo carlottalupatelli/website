@@ -910,6 +910,10 @@ footer a:hover { color: var(--accent-light); text-decoration: underline; }
 }
 
 /* ─── Services Section ────────────────────────────── */
+.services-section {
+  margin-top: var(--space-16);
+}
+
 .services-subtitle {
   font-family: 'Archivo', sans-serif;
   font-size: 20px;
