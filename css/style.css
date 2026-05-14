@@ -909,6 +909,69 @@ footer a:hover { color: var(--accent-light); text-decoration: underline; }
   .timeline-item::before { left: calc(-1 * var(--space-6) + 1px); }
 }
 
+/* ─── Services Section ────────────────────────────── */
+.services-subtitle {
+  font-family: 'Archivo', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: var(--space-4);
+  letter-spacing: -0.01em;
+}
+
+.services-description {
+  font-size: 16px;
+  line-height: 1.85;
+  color: var(--text-primary);
+  margin-bottom: var(--space-4);
+}
+
+.services-grid {
+  margin-top: var(--space-8);
+}
+
+.services-card-icon {
+  width: 44px;
+  height: 44px;
+  background: var(--background);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-5);
+  color: var(--primary);
+}
+
+.services-card-text {
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  margin-top: var(--space-3);
+}
+
+.services-testimonial {
+  background: var(--surface-raised);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius-sm);
+  padding: var(--space-6) var(--space-8);
+  margin: var(--space-8) 0 var(--space-8);
+}
+
+.services-testimonial p {
+  font-size: 16px;
+  font-style: italic;
+  color: var(--text-primary);
+  line-height: 1.75;
+  margin-bottom: var(--space-2);
+}
+
+.services-testimonial cite {
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-style: normal;
+  font-weight: 500;
+}
+
 @media (max-width: 520px) {
   nav .container {
     flex-direction: column;
