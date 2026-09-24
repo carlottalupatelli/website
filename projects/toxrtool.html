@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ToxRTool by Carlotta A. Lupatelli — an open-source web implementation of the EU/JRC ToxRTool for scoring the reliability of toxicological and ecotoxicological studies, with an AI-assisted draft assessment feature.">
+  <meta name="author" content="Carlotta A. Lupatelli">
+  <meta name="google-site-verification" content="6clzzCXKPPcqwebRR1oP2fIp0naX_H0CNR9QzUMN3RQ">
+  <link rel="canonical" href="https://carlottalupatelli.github.io/website/projects/toxrtool.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ToxRTool – Carlotta A. Lupatelli, PhD">
+  <meta property="og:description" content="An open-source web implementation of the EU/JRC ToxRTool, with an AI-assisted draft assessment against the 21 reliability criteria.">
+  <meta property="og:url" content="https://carlottalupatelli.github.io/website/projects/toxrtool.html">
+  <meta property="og:site_name" content="Carlotta A. Lupatelli">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="ToxRTool – Carlotta A. Lupatelli, PhD">
+  <meta name="twitter:description" content="An open-source web implementation of the EU/JRC ToxRTool, with an AI-assisted draft assessment.">
+  <title>ToxRTool – Carlotta A. Lupatelli, PhD</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .demo-video {
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--surface-raised);
+      margin-top: 20px;
+    }
+    .media-caption {
+      font-size: 13px;
+      color: var(--text-secondary);
+      margin-top: 10px;
+      line-height: 1.6;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <nav aria-label="Main navigation">
+    <div class="container">
+      <a href="../index.html" class="logo">Carlotta A. Lupatelli</a>
+      <ul class="links" role="list">
+        <li><a href="../index.html">About</a></li>
+        <li><a href="../services.html">Services</a></li>
+        <li><a href="../publications.html">Publications</a></li>
+        <li><a href="../projects.html" class="active">Projects</a></li>
+        <li><a href="../teaching.html">Teaching</a></li>
+        <li><a href="../cv.html">CV</a></li>
+        <li><a href="../blog.html">Blog</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main-content">
+    <div class="container">
+      <p style="margin-bottom: 24px;" data-reveal>
+        <a href="../projects.html">← Back to Projects</a>
+      </p>
+
+      <h1 data-reveal>ToxRTool</h1>
+      <p class="text-secondary" style="margin-bottom: 40px;" data-reveal>
+        Independent project · 2026
+      </p>
+
+      <!-- Overview -->
+      <div class="publication" data-reveal data-delay="100">
+        <h3 class="publication-title">Overview</h3>
+        <p>
+          ToxRTool (Toxicological data Reliability Assessment Tool) is a scoring instrument developed by EURL ECVAM at the European Commission Joint Research Centre for judging the reliability of toxicological and ecotoxicological studies, based on the Klimisch criteria used throughout EU chemical and pesticide regulation. I built an open-source web implementation of it, approved by the original authors and the JRC, to make the assessment faster to run and easier to document.
+        </p>
+        <p>
+          A reviewer works through 21 criteria grouped into categories — test substance identification, test organism/species characterisation, study design, and results reporting — scoring each one and citing supporting text from the study under evaluation. The tool computes the total score and assigns the corresponding reliability category (Klimisch 1–4), and produces a shareable, exportable record of the assessment.
+        </p>
+      </div>
+
+      <!-- AI-assisted draft update -->
+      <div class="publication" data-reveal data-delay="200">
+        <h3 class="publication-title">Latest update: AI-assisted draft assessment</h3>
+        <p>
+          The most recent update adds an AI draft step to the workflow. A reviewer uploads the study PDF, and the tool proposes a score and reasoning for each of the 21 criteria automatically — each answer backed by a citation that links directly to the exact page and section of the source document it was drawn from, so it can be checked against the original text in one click.
+        </p>
+        <p>
+          Nothing is applied to the assessment until the reviewer checks the draft: each item can be accepted, edited, or discarded individually before being applied. This turns a task that previously meant reading the full study and manually working through 21 criteria into a review-and-confirm pass, while keeping a human decision on every scored item.
+        </p>
+        <video class="demo-video" src="../assets/toxrtool-ai-draft-update.mp4" controls playsinline
+               aria-label="Screen recording demonstrating the ToxRTool AI-assisted draft assessment: uploading a study PDF, reviewing the AI-drafted score and citations for each criterion, and viewing the final reliability category"></video>
+        <p class="media-caption">
+          Walkthrough of the AI draft assessment: uploading a study PDF, reviewing the proposed score and cited reasoning for each of the 21 criteria, and the resulting Klimisch reliability category.
+        </p>
+      </div>
+
+      <!-- Key features -->
+      <div class="publication" data-reveal data-delay="300">
+        <h3 class="publication-title">Key features</h3>
+        <ul style="margin: 12px 0 0 20px; line-height: 1.9; font-size: 14px;">
+          <li>Full implementation of the 21 official ToxRTool criteria, organised by category, with mandatory-criterion handling</li>
+          <li>AI draft assessment from an uploaded study PDF, with per-criterion reasoning and page/section-linked citations</li>
+          <li>Reviewer approval step — every AI-proposed answer can be accepted, edited, or discarded before being applied</li>
+          <li>Automatic scoring and Klimisch reliability category (1–4) assignment</li>
+          <li>Export and sharing via PDF, Excel, and shareable link</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-socials">
+      <a href="https://www.linkedin.com/in/carlotta-aurora-lupatelli/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+      <a href="https://github.com/carlottalupatelli" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+      </a>
+      <a href="https://scholar.google.com/citations?user=jyS56jgAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Google Scholar">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+      </a>
+      <a href="mailto:carlotta.aurora.lupatelli@gmail.com" class="social-icon" aria-label="Email">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      </a>
+    </div>
+    <p>&copy; 2026 Carlotta A. Lupatelli. All rights reserved.</p>
+  </footer>
+
+  <script src="../js/main.js" defer></script>
+</body>
+</html>
